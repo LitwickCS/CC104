@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Library Catalog System</title>
+  </head>
+  <body>
+    <div id="banner">
+      <h1>KLL Library Catalog System</h1>
+    </div>
+    <div class="search">
+      <input
+        type="text"
+        id="Input"
+        onkeyup="searchFunction()"
+        placeholder="Search"
+      />
+      <select
+        id="filterCatalog"
+        onchange="searchFunction()"
+        title="filter_of_catalog"
+      >
+        <option value="">Select Catalog</option>
+        <option value="author">Author Catalog</option>
+        <option value="titles">Title Catalog</option>
+        <option value="subject">Subject Catalog</option>
+      </select>
+    </div>
+
+    <ul id="List">
+      <!-- Authors -->
+      <li
+        class="author"
+        data-info="
+      F 374.012 A323b 2019
+
+      Building and Enhancing New Literature Across Curriculum /
+       Joy Elen Alata, MA Ed., Eigen John T. Ignacio, MA Ed.
+       --first ed. -- Manila: Rex Book Store, C 2019. viii, 120p.; 25cm. 
+       includes index. ISBN 978-621-04-0091-5.
+      "
+        data-title="Alata, Elen Joy"
+      >
+        <a href="#">Alata, Elen Joy</a>
+        <div class="info-container">
+          <div class="info-text"></div>
+        </div>
+      </li>
+
+      <li
+        class="author"
+        data-info="
+        F364.164 B982f 2023
+
+        Fire Behavior and Arson Investigation /
+        Leonardo A. Bustria. --4th ed. --Quezon
+        City : Wiseman's Books Trading, Inc., c 2023.
+        vi, 273p,; 22cm.
+
+        Includes references.
+        ISBN 978-621-418-302-9.
+        1. Arson Investigation-Philippines,
+        2. Fire Investigation-Philippines. I. Title.
+        "
+        data-title="Bustria, Leonardo A."
+      >
+        <a href="#">Bustria, Leonardo A.</a>
+      </li>
+      <li
+        class="author"
+        data-info="
+        F363.25 G212s 2020
+
+        Special Crime Investigation with Simulation on Interview and Interrogation :
+        a Textbook for Criminology Students of the New Millennium / 
+        Mario A. Garcia.--
+        Quezon City: Wiseman's Books Trading, Inc., c 2020.
+        ix, 327p.; 23cm.
+
+        Includes references.
+        ISN : 978-621-418-117-9.
+        
+        "
+        data-title="Garcia, Mario A."
+      >
+        <a href="#">Garcia, Mario A.</a>
+      </li>
+
+      <li
+        class="author"
+        data-info="
+        F372.35 M664c 2021
+
+        A Course Module for Teaching Science in Primary Grades(Biology and Chemistry) /
+        Thelma R. Mingoa, PhD., Ivan Marcelo A. Duka, Johnny A. Ching, PhD.
+        -2021 ed.-- Manila: Rex Book Store, Inc., c 2021.
+        vi, 254 p.; 25cm.
+        
+        Includes index.
+        ISBN 978-621-04-0388-6.
+        "
+        data-title="Mingoa, Thelma R."
+      >
+        <a href="#">Mingoa, Thelma R.</a>
+      </li>
+
+      <li
+        class="author"
+        data-info="
+        F363.29 D229v 2020
+
+        Vice and Drug Education and Control :
+        A Textbook and Review Material /
+        Arlyn M. Dascil, DPA, Ronaldo Q. Santos M.D. --
+        Quezon City : Wiseman's Books Trading, c 2020
+        vii, 274p.; 22cm.
+        "
+        data-title="Santos, Ronaldo Q."
+      >
+        <a href="#">Santos, Ronaldo Q.</a>
+      </li>
+
+      <!-- Title -->
+      <li
+        class="titles"
+        data-info="
+        F658.15 P649B 2022
+
+        Pineda, Ariel Dizon
+        --Manila :Mindshapers, c2022.
+        viii, 223p.; 25cm.
+
+        "
+        data-title="Basic Financial Management"
+      >
+        <a href="#">Basic Financial Management</a>
+      </li>
+
+      <li
+        class="titles"
+        data-info="
+        F658.421 M314e 2022
+
+        Marcelo, Jefferson S., Samson, Girlie M.
+        --Manila: Mindshapers Co., Inc., c 2022.
+        viii, 163p.; 25cm.
+        "
+        data-title="Entrepreneurship"
+      >
+        <a href="#">Entrepreneurship</a>
+      </li>
+
+      <li
+        class="titles"
+        data-info="
+        F364.164 018f 2020
+
+        Osal, Virgil Bernaldez, Cleofe Bernadette F., Pinca, Leover B.
+        --Quezon City: Wiseman's Books Trading, Inc., c 2020.
+        v, 148p.; 23cm.
+        "
+        data-title="Fire technology and Arson Investigation"
+      >
+        <a href="#">Fire technology and Arson Investigation</a>
+      </li>
+
+      <li
+        class="titles"
+        data-info="
+        G005.117 G239o 2022
+
+        Garrett, Eugene
+        --Wilmington: Kaufman Press, c 2022.
+        ix, 336 p.; 26cm.
+        "
+        data-title="Object Oriented Programming using C++"
+      >
+        <a href="#">Object Oriented Programming using C++</a>
+      </li>
+
+      <li
+        class="titles"
+        data-info="
+        F363.25 G212s 2020
+
+        Garcia, Mario A.
+        Special Crime Investigation with Simulation on Interview and Interrogation:
+        A Textbook for Criminology Students of the New Millennium.
+        --Quezon City : Wiseman's Books Trading, Inc., c 2020.
+        ix, 327p.; 23cm.
+        "
+        data-title="Special Crime Investigation with Simulation on Interview and Interrogation"
+      >
+        <a href="#"
+          >Special Crime Investigation with Simulation on Interview and
+          Interrogation</a
+        >
+      </li>
+
+      <!-- Subject-->
+      <li
+        class="subject"
+        data-info="
+      F657 B311 2019
+      Basic Accounting for Non-Accountants / Philip T.
+      Abitang, CPA...{et al.}.--Manila:Mindshapers Co.,
+      Inc., c 2019
+      x, 150p.; 25cm.
+
+      F657 R456s 2021
+      Reyes, Virgilio D.
+      A Study on the Fundamentals of Accounting for
+      Partnerships and Corporations: A New Approach /
+      Virgilio D. Reyes. --MAnila: Gl Enterprises & Co., Inc.,
+      C 2021.
+      x, 213p.;27cm.
+      ISBN:978-621-416-114-0.
+      "
+        data-title="ACCOUNTING"
+      >
+        <a href="#">ACCOUNTING</a>
+      </li>
+      <li
+        class="subject"
+        data-info="
+        F701 R744c 2019
+
+        Roldan, Albert Napoleon J.
+        A Course Module for Art Appreciation/
+         Albert Napoleon J. Roldan, Chloe P. Deliosa.
+         -- first ed.- Manila: Rex Book Store, Inc., c2019.
+        vi, 180p. ;25cm.
+        "
+        data-title="ART APPRECIATION"
+      >
+        <a href="#">ART APPRECIATION</a>
+      </li>
+      <li
+        class="subject"
+        data-info="
+        F519.5 M382s 2021
+
+        Martin, Matt
+        Statistics for business and management /
+        Matt Martin, PhD.
+        --Manila: Unlimited Books Library Services 
+        & Publishing Inc., c 2021.
+        vi, 188p. ;25cm.
+
+        Includes appendix and bibliographical references.
+        ISBN:978-621-427-091-0.
+        "
+        data-title="COMMERCIAL STATISTICS-METHODOLOGY"
+      >
+        <a href="#">COMMERCIAL STATISTICS-METHODOLOGY</a>
+      </li>
+      <li
+        class="subject"
+        data-info="
+        F658.15 A294f 2022
+
+        Agustin-Acierto, Marife
+        Financial management / Marife Agustin-Acierto, 
+        Gilfred Abad Acierto, Ryan Canon Roque. 
+        --Manila : Unlimited Books Library Services and Publishing Inc.,
+         c 2022.
+        viii, 529 p. ; 25cm. 
+        "
+        data-title="FINANCIAL ANALYSIS"
+      >
+        <a href="#">FINANCIAL ANALYSIS</a>
+      </li>
+      <li
+        class="subject"
+        data-info="
+        F160 B 928a 2014
+
+        Buenaflor, Lionel E. 
+        The Art of Critical Thinking: Logic for Filipino Students /
+        Lionel E. Buenaflor. -- 3rd Edition. --
+        Mandaluyong City: Books Atbp.
+        Publishing Corp., c 2014.
+             xi, 303 p. ;22cm.
+
+             ISBN: 971-0412-51-8.
+        "
+        data-title="LOGIC"
+      >
+        <a href="#">LOGIC</a>
+      </li>
+    </ul>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modalContent">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Title</h2>
+        <p id="modalInfo">Info about the book or author...</p>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
