@@ -25,51 +25,30 @@ function searchFunction() {
 
   // 'Select Catalog' Filter
   if (filterCatalog === "") {
-    titleItems.forEach(function (item) {
-      item.style.display = "none";
-    });
-    authorItems.forEach(function (item) {
-      item.style.display = "none";
-    });
-    subjectItems.forEach(function (item) {
-      item.style.display = "none";
-    });
-  }
-  // 'Title Catalog' Filter
-  else if (filterCatalog === "titles") {
     filterItems(titleItems);
-    // Authors are hidden
-    authorItems.forEach(function (item) {
-      item.style.display = "none";
-    });
-    // Subjects are hidden
-    subjectItems.forEach(function (item) {
-      item.style.display = "none";
-    });
+    authorItems.forEach((item) => (item.style.display = "none")); // Hide authors
+    titleItems.forEach((item) => (item.style.display = "none")); // Hide titles
+    subjectItems.forEach((item) => (item.style.display = "none")); // Hide subjects
   }
   // 'Author Catalog' Filter
   else if (filterCatalog === "author") {
     filterItems(authorItems);
-    // Titles are hidden
-    titleItems.forEach(function (item) {
-      item.style.display = "none";
-    });
-    // Subjects are hidden
-    subjectItems.forEach(function (item) {
-      item.style.display = "none";
-    });
+    titleItems.forEach((item) => (item.style.display = "none")); // Hide titles
+    subjectItems.forEach((item) => (item.style.display = "none")); // Hide subjects
   }
+
+  // 'Title Catalog' Filter
+  else if (filterCatalog === "title") {
+    filterItems(titleItems);
+    authorItems.forEach((item) => (item.style.display = "none")); // Hide authors
+    subjectItems.forEach((item) => (item.style.display = "none")); // Hide subjects
+  }
+
   // 'Subject Catalog' Filter
   else if (filterCatalog === "subject") {
     filterItems(subjectItems);
-    // Titles are hidden
-    titleItems.forEach(function (item) {
-      item.style.display = "none";
-    });
-    // Authors are hidden
-    authorItems.forEach(function (item) {
-      item.style.display = "none";
-    });
+    authorItems.forEach((item) => (item.style.display = "none")); // Hide authors
+    titleItems.forEach((item) => (item.style.display = "none")); // Hide titles
   }
 }
 
