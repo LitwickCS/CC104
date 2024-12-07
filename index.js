@@ -14,15 +14,13 @@ function searchFunction() {
 
   // Filtering and Showing Results based on User's Input
   function filterItems(items) {
-    items.forEach(function (item) {
-      a = item.getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
-      }
+    let filteredItems = items.filter((item) => {
+      let a = item.getElementsByTagName("a")[0];
+      let txtValue = a.textContent || a.innerText;
+      return txtValue.toUpperCase().indexOf(filter) > -1;
     });
+    items.forEach((item) => (item.style.display = "none")); // Hide all items
+    filteredItems.forEach((item) => (item.style.display = "")); // Show matching items
   }
 
   // 'Select Catalog' Filter
